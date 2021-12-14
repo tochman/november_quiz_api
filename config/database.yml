@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: november_quiz_api_development
+
+test:
+  <<: *default
+  database: november_quiz_api_test
+
+production:
+  <<: *default
+  database: november_quiz_api_production
+  username: november_quiz_api
+  password: <%= ENV['NOVEMBER_QUIZ_API_DATABASE_PASSWORD'] %>
