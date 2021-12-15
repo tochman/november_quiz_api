@@ -31,4 +31,4 @@ category_array = [{ 'id' => 9, 'name' => 'General Knowledge' },
                   { 'id' => 31, 'name' => 'Entertainment: Japanese Anime & Manga' },
                   { 'id' => 32, 'name' => 'Entertainment: Cartoon & Animations' }]
 
-category_array.map { |category| QuizCategory.create(custom_id: category['id'], name: category['name']) }
+category_array.each { |category| QuizCategory.create(api_id: category['id'], name: category['name']) }

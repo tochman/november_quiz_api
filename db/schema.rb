@@ -16,19 +16,15 @@ ActiveRecord::Schema.define(version: 2021_12_15_102928) do
   enable_extension "plpgsql"
 
   create_table "quiz_categories", force: :cascade do |t|
-    t.integer "custom_id"
+    t.integer "api_id"
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "quizzes", force: :cascade do |t|
-    t.string "category"
-    t.string "type"
     t.string "difficulty"
-    t.string "question"
-    t.string "correct_answer"
-    t.string "incorrect_answers", default: [], array: true
+    t.text "questions"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

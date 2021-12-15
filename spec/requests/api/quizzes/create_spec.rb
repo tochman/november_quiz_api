@@ -13,8 +13,8 @@ RSpec.describe 'POST /api/quizzes' do
 
     it { is_expected.to have_http_status :created }
 
-    it 'is expected to respond with an array of quizzes' do
-      expect(response_json['results']).to have_length 10
+    it 'is expected to respond with an array of 10 questions' do
+      expect(response_json['quiz']['questions'].count).to eq 10
     end
   end
 end
