@@ -1,6 +1,6 @@
 RSpec.describe 'POST /api/quizzes' do
-  subject{ response }
-  
+  subject { response }
+
   describe 'with valid params' do
     before do
       post '/api/quizzes', params: {
