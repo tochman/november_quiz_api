@@ -1,4 +1,6 @@
 class Api::QuizzesController < ApplicationController
+  before_action :validate_params_presence, only: [:create]
+
   def create
     category = QuizCategory.find_by(name: params[:quiz][:category])
 
@@ -7,11 +9,23 @@ class Api::QuizzesController < ApplicationController
     if quiz.persisted?
       render json: { quiz: quiz }, status: :created
     else
-      render json: { quiz: quiz.errors.full_messages.to_sentance }, status: :unprocessable_entity
+      render json: { quiz: quiz.errors.full_messages.to_sentance },
+             status: :unprocessable_entity
     end
   end
 
   private
+
+  def render_error(message, status)
+    render json: { message: message }, status: status
+  end
+
+  def validate_params_presence
+    if params[:quiz].nil?
+      render_error('Category and difficulty params are missing',
+                   :unprocessable_entity)
+    end
+  end
 
   def quiz_params
     params.require(:quiz).permit(:category, :difficulty)

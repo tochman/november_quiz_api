@@ -31,7 +31,7 @@ RSpec.describe 'POST /api/quizzes' do
     it { is_expected.to have_http_status :unprocessable_entity }
 
     it 'is expected to respond with an error message' do
-      expect(response_json['message'].count).to eq 'Category and difficulty params are missing'
+      expect(response_json['message']).to eq 'Category and difficulty params are missing'
     end
   end
 end
