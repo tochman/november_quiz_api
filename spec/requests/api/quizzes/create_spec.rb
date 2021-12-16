@@ -1,4 +1,9 @@
 RSpec.describe 'POST /api/quizzes' do
+  before do
+    WebMock.stub_request(:get, %r{opentdb.com/api.php})
+           .to_return(status: 200, body: File.open(fixture_path + '/history_questions.json'))
+  end
+
   subject { response }
 
   describe 'with valid params' do
