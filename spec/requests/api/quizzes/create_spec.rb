@@ -23,15 +23,49 @@ RSpec.describe 'POST /api/quizzes' do
     end
   end
 
-  describe 'with missing params' do
-    before do
-      post '/api/quizzes', params: {}
+  describe 'unsuccessfully' do
+    describe 'due to missing params' do
+      before do
+        post '/api/quizzes', params: {}
+      end
+
+      it { is_expected.to have_http_status :unprocessable_entity }
+
+      it 'is expected to respond with an error message' do
+        expect(response_json['message']).to eq 'Category and difficulty params are missing'
+      end
     end
 
-    it { is_expected.to have_http_status :unprocessable_entity }
+    describe 'due to missing category' do
+      before do
+        post '/api/quizzes', params: {
+          quiz: {
+            difficulty: 'hard'
+          }
+        }
+      end
 
-    it 'is expected to respond with an error message' do
-      expect(response_json['message']).to eq 'Category and difficulty params are missing'
+      it { is_expected.to have_http_status :unprocessable_entity }
+
+      it 'is expected to respond with an error message' do
+        expect(response_json['message']).to eq 'Category param is missing'
+      end
+    end
+
+    describe 'due to missing difficulty' do
+      before do
+        post '/api/quizzes', params: {
+          quiz: {
+            category: 'History'
+          }
+        }
+      end
+
+      it { is_expected.to have_http_status :unprocessable_entity }
+
+      it 'is expected to respond with an error message' do
+        expect(response_json['message']).to eq 'Difficulty param is missing'
+      end
     end
   end
 end

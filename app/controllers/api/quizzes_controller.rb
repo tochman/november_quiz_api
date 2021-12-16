@@ -24,6 +24,12 @@ class Api::QuizzesController < ApplicationController
     if params[:quiz].nil?
       render_error('Category and difficulty params are missing',
                    :unprocessable_entity)
+    elsif params[:quiz][:category].nil?
+      render_error('Category param is missing',
+                   :unprocessable_entity)
+    elsif params[:quiz][:difficulty].nil?
+      render_error('Difficulty param is missing',
+                   :unprocessable_entity)
     end
   end
 
