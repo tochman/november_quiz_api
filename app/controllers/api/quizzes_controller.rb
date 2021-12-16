@@ -14,7 +14,7 @@ class Api::QuizzesController < ApplicationController
   private
 
   def quiz_params
-    params.require(:quiz).permit(:difficulty)
+    params.require(:quiz).permit(:category, :difficulty)
   end
 
   def get_questions(category)

@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_12_15_102928) do
   end
 
   create_table "quizzes", force: :cascade do |t|
+    t.string "category"
     t.string "difficulty"
     t.text "questions"
     t.datetime "created_at", precision: 6, null: false
