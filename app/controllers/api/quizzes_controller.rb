@@ -9,8 +9,8 @@ class Api::QuizzesController < ApplicationController
     if quiz.persisted?
       render json: { quiz: quiz }, status: :created
     else
-      render json: { quiz: quiz.errors.full_messages.to_sentance },
-             status: :unprocessable_entity
+      render_error(quiz.errors.full_messages.to_sentence,
+                   :unprocessable_entity)
     end
   end
 
