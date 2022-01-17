@@ -1,0 +1,125 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "When did Canada leave the confederation to become their own nation?",
+      "correct_answer": "July 1st, 1867",
+      "incorrect_answers": [
+        "July 1st, 1763",
+        "July 1st, 1832",
+        "July 1st, 1902"
+      ]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "How many sonatas did Ludwig van Beethoven write?",
+      "correct_answer": "32",
+      "incorrect_answers": [
+        "50",
+        "31",
+        "21"
+      ]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "During the Roman Triumvirate of 42 BCE, what region of the Roman Republic was given to Lepidus?",
+      "correct_answer": "Hispania ",
+      "incorrect_answers": [
+        "Italia",
+        "Gallia",
+        "Asia"
+      ]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What year was the United States Declaration of Independence signed?",
+      "correct_answer": "1776",
+      "incorrect_answers": [
+        "1775",
+        "1774",
+        "1777"
+      ]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "During the Spanish Civil War (1936), Francisco Franco fought for which political faction?",
+      "correct_answer": "Nationalist Spain",
+      "incorrect_answers": [
+        "Republican Spain",
+        "Popular Front",
+        "Papal State"
+      ]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Which day did World War I begin?",
+      "correct_answer": "July 28",
+      "incorrect_answers": [
+        "January 28",
+        "June 28",
+        "April 28"
+      ]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Which King of England was faced with the Peasants&#039; Revolt in 1381?",
+      "correct_answer": "Richard II",
+      "incorrect_answers": [
+        "Edward III",
+        "Edward II",
+        "Henry IV"
+      ]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "During World War I, which nation&#039;s monarchs were blood related?",
+      "correct_answer": "England, Germany, Russia",
+      "incorrect_answers": [
+        "France, Russia, Germany",
+        "Serbia, Russia, Croatia",
+        "Germany, Spain, Austria"
+      ]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "The Bohemian Revolt (1618-1620) started after Protestants in Prague did what to their Catholic Lords Regents?",
+      "correct_answer": "Threw them out of a window",
+      "incorrect_answers": [
+        "Insulted their mothers",
+        "Locked them in stockades",
+        "Hung them."
+      ]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Which of these positions did the astronomer and physicist Isaac Newton not hold?",
+      "correct_answer": "Surveyor to the City of London",
+      "incorrect_answers": [
+        "Professor of Mathematics",
+        "Warden of the Royal Mint",
+        "Member of Parliament"
+      ]
+    }
+  ]
+}
