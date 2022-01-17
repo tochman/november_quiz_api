@@ -9,6 +9,7 @@ gem 'puma', '~> 5.0'
 gem 'rack-cors'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'rest-client'
+gem 'stripe-rails'
 
 group :development, :test do
   gem 'factory_bot_rails'
@@ -16,6 +17,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'webmock'
+  gem 'stripe-ruby-mock', require: 'stripe_mock'
 end
 
 group :development do
