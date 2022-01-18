@@ -1,4 +1,4 @@
 class Quiz < ApplicationRecord
-  validates_presence_of :category, :difficulty, :questions
+  validates_presence_of :difficulty, :questions
   serialize :questions, Array
 end

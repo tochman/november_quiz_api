@@ -2,10 +2,12 @@ class Api::QuizzesController < ApplicationController
   before_action :validate_params_presence, only: [:create]
 
   def create
-    category = QuizCategory.find_by(name: params[:quiz][:category])
+    category = QuizCategory.find_by(name: params[:quiz][:category].humanize)
 
     questions = get_questions(category)
-    quiz = Quiz.create(quiz_params.merge!(questions: questions))
+    binding.pry
+    # quiz = Quiz.create(quiz_params.merge!(questions: questions))
+    quiz = Quiz.create(difficulty: params[:quiz][:difficulty], questions: questions)
     if quiz.persisted?
       render json: { quiz: quiz }, status: :created
     else
@@ -34,7 +36,7 @@ class Api::QuizzesController < ApplicationController
   end
 
   def quiz_params
-    params.require(:quiz).permit(:category, :difficulty)
+    params.require(:quiz).permit(:difficulty)
   end
 
   def get_questions(category)
