@@ -5,8 +5,6 @@ class Api::QuizzesController < ApplicationController
     category = QuizCategory.find_by(name: params[:quiz][:category].humanize)
 
     questions = get_questions(category)
-    binding.pry
-    # quiz = Quiz.create(quiz_params.merge!(questions: questions))
     quiz = Quiz.create(difficulty: params[:quiz][:difficulty], questions: questions)
     if quiz.persisted?
       render json: { quiz: quiz }, status: :created
